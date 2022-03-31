@@ -26,7 +26,7 @@ class Item(BaseModel):
     text: str
 
 
-@app.get("/get_bytes/")
+@app.get("/v1/voice")
 async def voices(item: Item):
     text = item.text
     Output = get_speech(text)
