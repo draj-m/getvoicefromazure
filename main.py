@@ -3,6 +3,7 @@ import azure.cognitiveservices.speech as speechsdk
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.encoders import jsonable_encoder
+import join
 
 
 
@@ -17,11 +18,13 @@ def get_speech(text, voice):
         stream = speechsdk.AudioDataStream(result)
         # stream.save_to_wav_file("bg1.mp3")
         raw_bytes = []
-        x = 0
-        while x == 0:
+        x = 1
+        y = bytes
+        while x != 0:
             audio_buffer = bytes(32000)
             x = stream.read_data(audio_buffer=audio_buffer)
             raw_bytes.append(audio_buffer)
+            #y = y + audio_buffer
         return text, processed_text, audioMime, raw_bytes
 
 
