@@ -21,7 +21,7 @@ def get_speech(text, voice):
         x = 1
         y = bytes
         while x != 0:
-            audio_buffer = bytes(32000)
+            audio_buffer = bytes(1000000)
             x = stream.read_data(audio_buffer=audio_buffer)
             raw_bytes.append(audio_buffer)
             #y = y + audio_buffer
