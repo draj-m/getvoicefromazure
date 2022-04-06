@@ -41,7 +41,7 @@ class Item(BaseModel):
     voice: str
 
 
-@app.post("/v1")
+@app.post("/v1/voice")
 async def voices(item: Item):
     text = item.text
     voice = item.voice
